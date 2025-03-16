@@ -1,4 +1,4 @@
-*toggleterm.txt*         For Neovim >= 0.8.0        Last change: 2025 March 09
+floating_term.txt         For Neovim >= 0.8.0        Last change: 2025 March 09
 
 ==============================================================================
 Table of Contents                               *toggleterm-table-of-contents*
@@ -200,7 +200,9 @@ what options are available. It is not written to be used as is.
         col = <value>,
         winblend = 3,
         zindex = <value>,
-        title_pos = 'left' | 'center' | 'right', position of the title of the floating window
+	-- position of the title of the floating window: 'right' by default
+        title_pos = 'left' | 'center' | 'right',
+	title = <string-value> -- "| Terminal |" by default
       },
       winbar = {
         enabled = false,

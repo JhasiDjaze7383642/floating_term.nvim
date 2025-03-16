@@ -286,7 +286,6 @@ function M._get_float_config(term, opening)
   row = vim.F.if_nil(M._resolve_size(opts.row, term), row)
   col = vim.F.if_nil(M._resolve_size(opts.col, term), col)
 
-  local version = vim.version()
 
   local float_config = {
     row = row,
@@ -297,11 +296,9 @@ function M._get_float_config(term, opening)
     height = height,
     border = opening and border or nil,
     zindex = opts.zindex or nil,
+    title_pos = opts.title_pos or "right",
+    title = opts.title or "| Terminal |"
   }
-  if version.major > 0 or version.minor >= 9 then
-    float_config.title_pos = term.display_name and opts.title_pos or nil
-    float_config.title = term.display_name
-  end
   return float_config
 end
 
